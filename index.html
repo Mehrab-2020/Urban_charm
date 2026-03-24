@@ -183,6 +183,58 @@
 </script>
 
 <!-- ════════════════════════════════════════
+     STRUCTURED DATA — FAQPage
+════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How can I place an order at Urban Charm?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Currently, the easiest way to order is through our WhatsApp integration. Simply click the 'Order via WhatsApp' button on any product, and our team will assist you with the checkout process and delivery details."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you deliver all over Bangladesh?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! We offer reliable shipping to all 64 districts. Whether you are in Dhaka, Chittagong, Sylhet, or Rajshahi, we ensure your premium lighting and cosmetics reach you safely."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are your skincare products (like COSRX) authentic?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "100% Guaranteed. At Urban Charm, we take pride in sourcing only original, high-quality skincare products. We understand the importance of authenticity for your skin and never compromise on our sourcing standards."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the price of a Crystal Touch Lamp in Bangladesh?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our Crystal Rose Touch Lamps are priced competitively to offer luxury at an affordable rate. Please check our product gallery for the most up-to-date pricing and current discounts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I power the Astronaut Starry Sky Projector?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Astronaut Projector is USB-powered, making it easy to plug into a power bank, laptop, or wall adapter. It's perfect for kids' rooms, gaming setups, or as a unique gift."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- ════════════════════════════════════════
      PERFORMANCE — Resource Hints
 ════════════════════════════════════════ -->
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -336,7 +388,41 @@
   .float-wa:hover { transform: scale(1.1); }
   .float-wa svg { width: 28px; height: 28px; fill: white; }
 
-  /* RESPONSIVE */
+  /* FAQ */
+  .faq-section { background: var(--beige-pale); }
+  .faq-inner { max-width: 780px; margin: 0 auto; }
+  .faq-list { display: flex; flex-direction: column; gap: 0; border-top: 1px solid rgba(201,185,154,0.4); }
+
+  .faq-item { border-bottom: 1px solid rgba(201,185,154,0.4); }
+
+  .faq-q {
+    width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding: 22px 0; background: none; border: none; cursor: pointer; text-align: left;
+    font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 500;
+    color: var(--olive); transition: color 0.25s;
+  }
+  .faq-q:hover { color: var(--text-muted); }
+  .faq-q[aria-expanded="true"] { color: var(--olive); }
+
+  .faq-icon {
+    width: 20px; height: 20px; flex-shrink: 0;
+    stroke: var(--beige); stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round;
+    transition: transform 0.3s;
+  }
+  .faq-q[aria-expanded="true"] .faq-icon { transform: rotate(180deg); stroke: var(--olive); }
+
+  .faq-a {
+    overflow: hidden; max-height: 0; transition: max-height 0.35s ease, padding 0.35s ease;
+  }
+  .faq-a:not([hidden]) { max-height: 300px; padding-bottom: 20px; }
+  .faq-a[hidden] { display: block !important; visibility: visible; }
+
+  .faq-a p {
+    font-size: 0.9rem; font-weight: 300; line-height: 1.85; color: var(--text-muted);
+  }
+  .faq-a p strong { font-weight: 500; color: var(--olive); }
+
+
   @media (max-width: 900px) {
     .nav-links { display: none; }
     .hero-inner { grid-template-columns: 1fr; text-align: center; }
@@ -367,6 +453,7 @@
     <ul class="nav-links" role="list">
       <li><a href="#lighting">Lighting</a></li>
       <li><a href="#cosmetics">Cosmetics</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#about">About</a></li>
     </ul>
   </nav>
@@ -537,6 +624,68 @@
 
 </main>
 
+<!-- FAQ SECTION -->
+  <section id="faq" class="faq-section" aria-labelledby="faq-heading">
+    <div class="faq-inner">
+      <span class="section-label">Support</span>
+      <h2 class="section-title" id="faq-heading">Frequently Asked Questions</h2>
+
+      <div class="faq-list" itemscope itemtype="https://schema.org/FAQPage">
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq1">
+            <span itemprop="name">How can I place an order at Urban Charm?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-a" id="faq1" role="region" hidden itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Currently, the easiest way to order is through our WhatsApp integration. Simply click the <strong>"Order via WhatsApp"</strong> button on any product, and our team will assist you with the checkout process and delivery details.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq2">
+            <span itemprop="name">Do you deliver all over Bangladesh?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-a" id="faq2" role="region" hidden itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Yes! We offer reliable shipping to all 64 districts. Whether you are in Dhaka, Chittagong, Sylhet, or Rajshahi, we ensure your premium lighting and cosmetics reach you safely.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq3">
+            <span itemprop="name">Are your skincare products (like COSRX) authentic?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-a" id="faq3" role="region" hidden itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">100% Guaranteed. At Urban Charm, we take pride in sourcing only original, high-quality skincare products. We understand the importance of authenticity for your skin and never compromise on our sourcing standards.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq4">
+            <span itemprop="name">What is the price of a Crystal Touch Lamp in Bangladesh?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-a" id="faq4" role="region" hidden itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Our Crystal Rose Touch Lamps are priced competitively to offer luxury at an affordable rate. Please check our product gallery for the most up-to-date pricing and current discounts.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq5">
+            <span itemprop="name">How do I power the Astronaut Starry Sky Projector?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-a" id="faq5" role="region" hidden itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">The Astronaut Projector is USB-powered, making it easy to plug into a power bank, laptop, or wall adapter. It's perfect for kids' rooms, gaming setups, or as a unique gift.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
 <!-- FOOTER — important for local SEO -->
 <footer id="about" aria-label="Site footer">
   <span class="footer-logo">Urban Charm</span>
@@ -563,6 +712,23 @@
 <script>
   // Auto-update copyright year
   document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      // Close all
+      document.querySelectorAll('.faq-q').forEach(b => {
+        b.setAttribute('aria-expanded', 'false');
+        b.nextElementSibling.setAttribute('hidden', '');
+      });
+      // Open clicked if it was closed
+      if (!expanded) {
+        btn.setAttribute('aria-expanded', 'true');
+        btn.nextElementSibling.removeAttribute('hidden');
+      }
+    });
+  });
 </script>
 
 </body>
