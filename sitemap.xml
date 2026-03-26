@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Home -->
+  <url>
+    <loc>https://www.urbancharm.com.bd/</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en-BD" href="https://www.urbancharm.com.bd/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.urbancharm.com.bd/"/>
+  </url>
+
+  <!-- Lighting Section -->
+  <url>
+    <loc>https://www.urbancharm.com.bd/#lighting</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Cosmetics Section -->
+  <url>
+    <loc>https://www.urbancharm.com.bd/#cosmetics</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Reviews Section -->
+  <url>
+    <loc>https://www.urbancharm.com.bd/#reviews</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- FAQ Section -->
+  <url>
+    <loc>https://www.urbancharm.com.bd/#faq</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- About / Footer -->
+  <url>
+    <loc>https://www.urbancharm.com.bd/#about</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>
